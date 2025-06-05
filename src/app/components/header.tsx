@@ -1,7 +1,6 @@
 // src/components/Header.tsx
 "use client"; // ← This marks the entire file as a Client Component
 
-import Link from "next/link";
 import { useState } from "react";
 import icon from "../media/ReparaMDW.png";
 

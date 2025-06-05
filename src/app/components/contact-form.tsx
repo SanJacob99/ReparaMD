@@ -24,8 +24,16 @@ export default function Contactform({ services }: ContactFormProps) {
       return;
     }
 
+    // formData es de tipo FormData
     const formData = new FormData(formEl);
-    const body = new URLSearchParams(formData as any).toString();
+
+    // 1) Convertimos formData.entries() a un array de [clave, valorString]
+    const entries = Array.from(formData.entries()).map(
+      ([key, value]) => [key, String(value)] as [string, string]
+    );
+
+    // 2) Ahora podemos crear el body sin usar `any`
+    const body = new URLSearchParams(entries).toString();
 
     try {
       const res = await fetch("/api/sendMessage", {

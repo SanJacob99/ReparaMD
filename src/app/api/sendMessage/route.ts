@@ -67,8 +67,11 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ success: true }, { status: 200 });
-  } catch (err: any) {
-    console.error("Error enviando correo:", err);
+  } catch (err: unknown) {
+    // Extractor de mensaje (si `err` es un objeto Error)
+    const errorMessage = err instanceof Error ? err.message : String(err);
+
+    console.error("Error enviando correo:", errorMessage);
     return NextResponse.json(
       { success: false, error: "Error interno al enviar el mensaje." },
       { status: 500 }
