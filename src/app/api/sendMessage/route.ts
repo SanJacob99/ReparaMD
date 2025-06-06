@@ -68,6 +68,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (err: unknown) {
+    console.log(err);
     // Extractor de mensaje (si `err` es un objeto Error)
     const errorMessage = err instanceof Error ? err.message : String(err);
 
