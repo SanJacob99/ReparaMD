@@ -1,0 +1,32 @@
+name: 🚀 CD to VPS on push to main
+
+# Se disparará sólo cuando haya push a main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Desplegar en VPS
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v4
+
+      - name: 🔑 Setup SSH key
+        uses: webfactory/ssh-agent@v0.7.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: 🚧 Pull & Build & Restart
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} << 'EOF'
+            set -e
+            cd /root/apps/reparamd    # Ajusta a tu ruta real
+            git pull origin main
+            npm install --production
+            npm run build
+            # Si usas pm2:
+            pm2 reload ReparamdApp || pm2 start npm --name ReparamdApp -- start
+          EOF
