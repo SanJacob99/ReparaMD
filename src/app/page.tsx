@@ -370,7 +370,7 @@ const App: React.FC = () => {
                   href="#contacto"
                   className="text-blue-800 hover:underline font-semibold"
                 >
-                  formulario de contacto sera cierto
+                  formulario de contacto s
                 </a>{" "}
                 o marcando <strong>(240) 602-2365</strong>. Segundo, entrega tu
                 equipo en nuestra dirección en Rockville (123 Main Street, Suite
