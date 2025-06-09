@@ -21,6 +21,7 @@ jobs:
 
       - name: 🚧 Pull & Build & Restart
         run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > testkey
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} << 'EOF'
             set -e
             cd /root/apps/reparamd    # Ajusta a tu ruta real
