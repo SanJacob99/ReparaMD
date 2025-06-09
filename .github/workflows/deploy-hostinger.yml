@@ -26,7 +26,7 @@ jobs:
             set -e
             cd /root/apps/reparamd    # Ajusta a tu ruta real
             git pull origin main
-            npm install --production
+            npm install 
             npm run build
             # Si usas pm2:
             pm2 reload ReparamdApp || pm2 start npm --name ReparamdApp -- start
