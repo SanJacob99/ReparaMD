@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, FormEvent } from "react";
-import { Service } from "../page";
+import { Service } from "../types/services";
 
 interface ContactFormProps {
   services: Service[];
