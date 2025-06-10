@@ -27,7 +27,7 @@ type FAQItem = {
   answer: string;
 };
 
-export const services: Service[] = [
+const services: Service[] = [
   {
     id: "diagnostico",
     title: "Diagnóstico básico",
@@ -59,7 +59,6 @@ export const services: Service[] = [
       "Instalación de Windows 10/11, Linux o MacOS según corresponda. Incluye controladores oficiales, actualización de BIOS/UEFI y configuración básica de programas esenciales.",
     priceMin: 50,
     priceMax: 80,
-    extraInfo: "Clonación de disco existente: +$20",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -76,6 +75,7 @@ export const services: Service[] = [
         />
       </svg>
     ),
+    extraInfo: "Clonación de disco existente: +$20",
   },
   {
     id: "virus",
@@ -173,79 +173,6 @@ export const services: Service[] = [
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M2 10h20M2 14h20"
-        />
-      </svg>
-    ),
-  },
-  // Nuevos servicios de desarrollo web
-  {
-    id: "web-basico",
-    title: "Diseño Web Básico",
-    description:
-      "Creación de sitio web estático en WordPress con tema gratuito y hasta 5 páginas: Home, Servicios, Acerca, Blog y Contacto.",
-    priceMin: 300,
-    priceMax: 500,
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-12 text-green-800"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={2}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M3 7h18M3 12h18M3 17h18"
-        />
-      </svg>
-    ),
-  },
-  {
-    id: "ecommerce-wordpress",
-    title: "Tienda e-Commerce en WordPress",
-    description:
-      "Implementación de WooCommerce con hasta 20 productos, configuración de pasarela de pago, impuestos y envío básico.",
-    priceMin: 500,
-    priceMax: 2500,
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-12 text-green-800"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={2}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M3 3h18l-2 13H5L3 3z M16 21a2 2 0 11-4 0 2 2 0 014 0z M7 21a2 2 0 11-4 0 2 2 0 014 0z"
-        />
-      </svg>
-    ),
-  },
-  {
-    id: "mantenimiento-web",
-    title: "Mantenimiento Web Mensual",
-    description:
-      "Actualizaciones de WordPress, plugins y temas. Backups mensuales y monitoreo básico de seguridad.",
-    priceMin: 50,
-    priceMax: 100,
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-12 text-green-800"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={2}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 8v4l3 3 M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
         />
       </svg>
     ),
