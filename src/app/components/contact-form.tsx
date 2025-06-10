@@ -81,7 +81,6 @@ export default function Contactform({ services }: ContactFormProps) {
                 <select
                   id="servicio"
                   name="servicio"
-                  required
                   className="w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200"
                 >
                   <option value="" disabled>
@@ -89,8 +88,9 @@ export default function Contactform({ services }: ContactFormProps) {
                   </option>
                   {services.map((svc) => (
                     <option key={svc.id} value={svc.title}>
-                      {svc.title} (desde ${svc.priceMin}
-                      {svc.priceMax ? `–${svc.priceMax}` : ""})
+                      {`${svc.title} (desde $${svc.priceMin}${
+                        svc.priceMax ? `–${svc.priceMax}` : ""
+                      })`}
                     </option>
                   ))}
                 </select>
